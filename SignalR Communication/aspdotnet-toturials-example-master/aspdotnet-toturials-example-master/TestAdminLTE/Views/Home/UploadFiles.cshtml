@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "UploadFiles";
+    Layout = "_Main";
+}
+    <form asp-controller="Home" asp-action="UploadFiles" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" name="files" id="exampleInputFile" multiple>
+
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+   

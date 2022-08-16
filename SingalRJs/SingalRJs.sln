@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingalRJs", "SingalRJs.csproj", "{AFB8E248-FCCC-4FD0-8AE2-451699CDC4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRHost", "..\SignalRHost\SignalRHost.csproj", "{98CA088F-E414-4B12-9ABD-7CA1C688B54D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFB8E248-FCCC-4FD0-8AE2-451699CDC4A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB8E248-FCCC-4FD0-8AE2-451699CDC4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB8E248-FCCC-4FD0-8AE2-451699CDC4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB8E248-FCCC-4FD0-8AE2-451699CDC4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CA088F-E414-4B12-9ABD-7CA1C688B54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CA088F-E414-4B12-9ABD-7CA1C688B54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CA088F-E414-4B12-9ABD-7CA1C688B54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CA088F-E414-4B12-9ABD-7CA1C688B54D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEC33AAB-DD91-485D-BC60-3095AD05190D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "chat";
+}
+
+
+<label id="lblname" value="Username">Username</label>
+<input type="text" id="txtUsername" />
+<label id="lblpassword" value="Password">Password</label>
+<input type="text" id="txtPassword" />
+<label id="lblEmail" value="Email">Email</label>
+<input type="text" id="txtEmail" />
+<button id="btnsumbit" value="Submit">Submit</button>
+
+@section scripts{
+insure that You Load Jquery File before Loading Signal Js Files
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.signalR-2.4.3.js"></script>
+<script src="~/Scripts/jquery-1.6.4.min.js"></script>
+<script src="~/Scripts/jquery.signalR-2.4.3.min.js"></script>
+<script src="http://172.16.2.72:8500/signalr/hubs"></script>
+<script src="~/SignalR/hubs"></script>
+<script src="@Url.Content("~/signalr/hubs")"></script>
+<script>
+        //$(function () {
+        //    debugger;
+        //     // Declare a proxy to reference the hub.
+        //     // Make Sure You Enter the Hub Name in Small Letters
+        //    var chat = $.connection.akash;
+        //    $.connection.hub.start().done(function () {
+        //        $("#btnsumbit").click(function () {
+        //            debugger;
+
+        //            //var Username = $("#txtUsername").val();
+        //            var Name = $("#txtEmail").val();
+        //            //var pass = $("#txtPassword").val();
+
+        //            if (Name.length > 0) {
+        //                chat.server.connect($("#txtUsername").val(), $("#txtEmail").val(), $("#txtPassword").val());  //It will call the connect method on Hub
+        //            }
+        //            else {
+        //                alert("Please enter name");
+        //            }
+
+        //        });
+
+
+        //    });
+
+
+        //});
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+        $(function () {
+            //debugger;
+
+            ////$.connection.hub.start()
+            ////var connection = $.hubConnection("http://172.16.2.72:8500/myhub");--It Works
+            ////var connection = $.hubConnection("http://172.16.2.72:8500/signalr");
+            //$.connection.hub.url = "http://172.16.2.72:8500/signalr";
+            //// Declare a proxy to reference the hub.
+            //var chatHub = $.connection.myhub;
+
+            ////registerClientMethods(connection);
+            //// Start Hub
+
+
+            //$.connection.hub.start().done(function () {
+
+            //    registerEvents(connection)
+            //    alert("connection started!");
+            //    console.log("Connection Started");
+
+            //});
+            //$.connection.hub.start().done(function () {
+
+            //    registerEvents(connection)
+            //    alert("Server Disconnected!");
+            //    console.log("Connection Started");
+
+            //});
+            debugger;
+            $.connection.hub.url = "http://*:8500/signalr";
+            var connection = $.connection.TerminalHub;
+            connection.client.displayTime = function (time) {
+                $('#time').css('background', 'blue').css('color', 'white').text(time);
+            };
+            $.connection.hub.strarting(function () {
+                $('#time').text("connection starting ******");
+            });
+            $.connection.hub.disconnected(function () {
+                $('#time').css('background', 'red').text("client disconnected");
+            });
+            $.connection.start().done(function () {
+                connection.server.severTime();
+            });
+
+        });
+        function registerEvents(chatHub) {
+
+            $("#btnsumbit").click(function () {
+                debugger;
+                var name = $("#txtUsername").val();
+                var email = $("#txtEmail").val();
+                var password = $("#txtPassword").val();
+
+                if (name.length > 0) {
+                    chatHub.server.GetData(name, email);  //It will call the connect method on Hub
+                }
+                else {
+                    alert("Please enter name");
+                }
+
+            });
+        }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+    </script>
+}

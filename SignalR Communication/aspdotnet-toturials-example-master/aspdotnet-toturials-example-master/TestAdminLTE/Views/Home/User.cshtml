@@ -1,0 +1,28 @@
+﻿@using System.Data
+@model DataTable
+
+@{
+    ViewData["Title"] = "User";
+    DataTable dtUser = (DataTable)ViewData["user"];
+}
+
+<h2>User</h2>
+@foreach(DataRow row in @Model.Rows)
+{
+    <h2>@row["fname"]</h2>
+
+}
+
+<h2>Viewdata</h2>
+@foreach(DataRow row in dtUser.Rows)
+{
+    <h2>@row["lname"]</h2>
+
+}
+
+@foreach(DataRow row in @ViewBag.user.Rows)
+{
+    <h2>@row["lname"]</h2>
+
+}
+
